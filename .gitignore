@@ -1,0 +1,16 @@
+finance-dashboard/node_modules/
+finance_dashboard/.env
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+backend/db.sqlite3
+backend/.env
+
+.vscode/
+
+.DS_Store
+*.log
