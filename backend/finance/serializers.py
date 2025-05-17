@@ -12,6 +12,9 @@ class BankSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class InvestmentRecommendationSerializer(serializers.ModelSerializer):
+    salary_range = SalaryRangeSerializer()
+    bank = BankSerializer()
+    
     class Meta:
         model = InvestmentRecommendation
         fields = '__all__'

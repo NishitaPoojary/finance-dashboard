@@ -1,7 +1,23 @@
-import axios from "axios";
+import axiosInstance from './axiosInstance';
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
+// Fetch Salary Ranges
+export const getSalaryRanges = async () => {
+  try {
+    const response = await axiosInstance.get('/salaryranges/');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching salary ranges:", error);
+    throw error;
+  }
+};
 
-export const getSalaryRanges = () => axios.get(`${API_BASE_URL}/salary/`);
-export const getBanks = () => axios.get(`${API_BASE_URL}/banks/`);
-export const getInvestments = () => axios.get(`${API_BASE_URL}/investments/`);
+// Fetch Banks
+export const getBanks = async () => {
+  try {
+    const response = await axiosInstance.get('/banks/');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching banks:", error);
+    throw error;
+  }
+};
