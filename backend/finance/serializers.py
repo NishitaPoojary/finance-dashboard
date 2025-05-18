@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import SalaryRange, Bank, InvestmentRecommendation
+from .models import Bank,SalaryRange
 
 class SalaryRangeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,12 +9,12 @@ class SalaryRangeSerializer(serializers.ModelSerializer):
 class BankSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bank
-        fields = '__all__'
+        fields = ['id','name','fd_interest_rate','rd_interest_rate','savings_interest_rate']
 
-class InvestmentRecommendationSerializer(serializers.ModelSerializer):
+'''class InvestmentRecommendationSerializer(serializers.ModelSerializer):
     salary_range = SalaryRangeSerializer()
     bank = BankSerializer()
     
     class Meta:
         model = InvestmentRecommendation
-        fields = '__all__'
+        fields = '__all__'''

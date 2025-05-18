@@ -1,12 +1,7 @@
-from django.urls import path, include
-from rest_framework import routers
-from .views import BankViewSet, SalaryRangeViewSet, InvestmentRecommendationViewSet
-
-router = routers.DefaultRouter()
-router.register(r'banks', BankViewSet)
-router.register(r'salary-ranges', SalaryRangeViewSet)
-router.register(r'investments', InvestmentRecommendationViewSet)
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('banks/', views.BankListAPIView.as_view(), name='bank-list'),
+    path('salary-ranges/', views.SalaryRangeListAPIView.as_view(), name='salary-range-list'),
 ]

@@ -1,16 +1,5 @@
 import axiosInstance from './axiosInstance';
 
-// Fetch Salary Ranges
-export const getSalaryRanges = async () => {
-  try {
-    const response = await axiosInstance.get('/salaryranges/');
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching salary ranges:", error);
-    throw error;
-  }
-};
-
 // Fetch Banks
 export const getBanks = async () => {
   try {
@@ -18,6 +7,6 @@ export const getBanks = async () => {
     return response.data;
   } catch (error) {
     console.error("Error fetching banks:", error);
-    throw error;
+    return[];
   }
 };

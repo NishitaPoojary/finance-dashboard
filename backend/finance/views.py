@@ -1,15 +1,16 @@
-from rest_framework import viewsets
-from .models import SalaryRange, Bank, InvestmentRecommendation
-from .serializers import SalaryRangeSerializer, BankSerializer, InvestmentRecommendationSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import Bank, SalaryRange
+from .serializers import BankSerializer, SalaryRangeSerializer
 
-class SalaryRangeViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = SalaryRange.objects.all()
-    serializer_class = SalaryRangeSerializer
+class BankListAPIView(APIView):
+    def get(self, request):
+        banks = Bank.objects.all()
+        serializer = BankSerializer(banks, many=True)
+        return Response(serializer.data)
 
-class BankViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Bank.objects.all()
-    serializer_class = BankSerializer
-
-class InvestmentRecommendationViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = InvestmentRecommendation.objects.all()
-    serializer_class = InvestmentRecommendationSerializer
+class SalaryRangeListAPIView(APIView):
+    def get(self, request):
+        ranges = SalaryRange.objects.all()
+        serializer = SalaryRangeSerializer(ranges, many=True)
+        return Response(serializer.data)
