@@ -1,11 +1,10 @@
 import React from "react";
-import BankList from "./BankList";
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <h1>Personal Finance Dashboard</h1>
-      <BankList />
+      <Dashboard />
     </div>
   );
 }

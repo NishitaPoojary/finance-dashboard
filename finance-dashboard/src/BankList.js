@@ -20,9 +20,9 @@ const BankList = () => {
         {banks.map((bank) => (
           <li key={bank.id}>
             <strong>{bank.name}</strong><br />
-            FD Interest: {bank.fd_interest}%<br />
-            RD Interest: {bank.rd_interest}%<br />
-            Savings Interest: {bank.savings_interest}%
+            FD Interest: {bank.fd_interest_rate}%<br />
+            RD Interest: {bank.rd_interest_rate}%<br />
+            Savings Interest: {bank.savings_interest_rate}%
           </li>
         ))}
       </ul>

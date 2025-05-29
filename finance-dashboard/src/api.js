@@ -7,6 +7,17 @@ export const getBanks = async () => {
     return response.data;
   } catch (error) {
     console.error("Error fetching banks:", error);
-    return[];
+    return [];
+  }
+};
+
+// Fetch Salary Ranges
+export const getSalaryRanges = async () => {
+  try {
+    const response = await axiosInstance.get('/salary-ranges/');
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching salary ranges:", error);
+    return [];
   }
 };
